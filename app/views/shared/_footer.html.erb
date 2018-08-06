@@ -1,0 +1,70 @@
+  <!-- start: FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="newsletter">
+            <h4>Get Free Job Alerts !</h4>
+            <p>Get Jobs Alert all over the county post by job best employers by signing up .</p>
+            <%= render 'job_alerts/form', job_alert: @job_alert %>
+            
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="contact-details">
+            <h4>Contact Us</h4>
+            <ul class="contact">
+              <li>
+                <p><i class="fa fa-map-marker"></i><strong>Address:</strong> 3rd Floor Sanlam
+                House, Kenyatta Avenue.<br>
+                Nairobi , Kenya.</p>
+              </li>
+              <li>
+                <p><i class="fa fa-phone"></i><strong>Phone:</strong> (+254) 715 614 675</p>
+              </li>
+              <li>
+                <p><i class="fa fa-envelope"></i><strong>Email:</strong> <a href=
+                "mailto:mail@example.com">info@musimbajobportal.co.ke</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+
+            <%= link_to root_path, :class => "logo" do %>
+              <p><strong>Musimba Job Portal</strong></p>
+            <% end %>
+
+           
+          </div>
+          <div class="col-md-4">
+            <p>&copy; <%= Time.now.year %> by Musimba Job Portal. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-4">
+            <nav id="sub-menu">
+              <ul>
+                <li>
+                  <%= link_to faqs_path do %>
+                    <p><strong>FAQ's</strong></p>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to contact_path do %>
+                    <p><strong>Contact Us</strong></p>
+                  <% end %>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#" id="scroll-top"><i class="fa fa-angle-up"></i></a> 
+  <!-- end: FOOTER -->

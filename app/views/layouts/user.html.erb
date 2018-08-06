@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Musimba - Job Portal</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'animate.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'main-responsive', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'theme_blue', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'settings', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'flexslider', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'colorbox', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%#= stylesheet_link_tag 'all', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%#= stylesheet_link_tag 'bootstrap-colorpalette', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'perfect-scrollbar', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'theme_light', media: 'all', 'data-turbolinks-track': 'reload' %>
+   
+
+    <%#= stylesheet_link_tag 'fullcalendar', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+
+  </head>
+
+  <body>
+    
+      <%#= render 'shared/navbar' %>
+      
+    <!--[if gte IE 9]><!-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!--<![endif]-->
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.transit', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'twitter-bootstrap-hover-dropdown.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.appear', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.blockUI', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.cookie', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'main', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'jquery.themepunch.plugins.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.themepunch.revolution.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.flexslider', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.stellar.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.colorbox-min', 'data-turbolinks-track': 'reload' %>
+
+
+
+    <%= javascript_include_tag 'index', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.icheck.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.mousewheel', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'perfect-scrollbar', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'less-1.5.0.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap-colorpalette', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap-fileupload.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.pulsate.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'pages-user-profile', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag Ckeditor.cdn_url %>
+
+    <script>
+      jQuery(document).ready(function() {
+        Main.init();
+        Index.init();
+        $.stellar();
+      });
+    </script>
+
+    <script>
+      //jQuery(document).ready(function() {
+       // Main.init();
+        //PagesUserProfile.init();
+      //});
+    </script>
+
+  </body>
+</html>

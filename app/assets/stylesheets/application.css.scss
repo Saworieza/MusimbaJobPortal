@@ -1,0 +1,8 @@
+@import 'bootstrap';
+@import 'bootstrap/theme';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+//= require bootstrap-datepicker
+//= require chosen
+//= depend_on_asset "logo.png"

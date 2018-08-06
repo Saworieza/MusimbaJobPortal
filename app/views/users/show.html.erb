@@ -1,0 +1,380 @@
+<title> My Profile </title>
+<%= render 'userdash/navbar' %>
+
+<div class="main-content">
+  <!-- start: PANEL CONFIGURATION MODAL FORM -->
+  <div aria-hidden="true" class="modal fade" id="panel-config" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+          <h4 class="modal-title">Panel Configuration</h4>
+        </div>
+        <div class="modal-body">
+          Here will be a configuration form
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+          <button class="btn btn-primary" type="button">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- end: SPANEL CONFIGURATION MODAL FORM -->
+  <div class="container" style="min-height: 789px;">
+    <!-- start: PAGE HEADER -->
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- start: PAGE TITLE & BREADCRUMB -->
+        <ol class="breadcrumb">
+          <li>
+            <i class="clip-home-3"></i> <a href="index.html">Home</a>
+          </li>
+          <li class="active">My Profile</li>
+        </ol>
+        <div class="page-header">
+          <h1>My Profile</h1>
+        </div><!-- end: PAGE TITLE & BREADCRUMB -->
+      </div>
+    </div><!-- end: PAGE HEADER -->
+    <!-- start: PAGE CONTENT -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="tabbable">
+          <ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+            <li class="active">
+              <a data-toggle="tab" href="#panel_overview">Overview</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#panel_educational_background">Educational background</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#panel_work_experience">Work Experience</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#panel_reference">Referees</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#panel_projects">Projects</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#panel_awards">Award &amp; Distinction</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#panel_availability">Job Preference</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane in active" id="panel_overview">
+              <div class="row">
+                <div class="col-sm-5 col-md-4">
+                  <div class="user-left">
+                    <div class="center">
+                      <h4><%= @user.first_name %> <%= @user.second_name %> <%= @user.last_name%></h4>
+                      <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="user-image">
+                          <div class="fileupload-new thumbnail">
+                              <%= image_tag @user.avatar.url(:thumb) %>
+                           </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <p><a class="btn btn-facebook btn-sm btn-squared"><i class=
+                      "fa fa-facebook"></i></a> <a class=
+                      "btn btn-twitter btn-sm btn-squared"><i class="fa fa-twitter"></i></a>
+                      <a class="btn btn-linkedin btn-sm btn-squared"><i class=
+                      "fa fa-linkedin"></i></a> <a class=
+                      "btn btn-google-plus btn-sm btn-squared"><i class=
+                      "fa fa-google-plus"></i></a></p>
+                      <hr>
+                    </div>
+                    <table class="table table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th colspan="3">Contact Information</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Email:</td>
+                          <td>
+                            <a href=""><%= @user.email %></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Phone:</td>
+                          <td><%= @user.phone %></td>
+                        </tr>
+                        <tr>
+                          <td>ID Number</td>
+                          <td>
+                            <a href=""><%= @user.id_number %></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th colspan="3">General information</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Marital status</td>
+                          <td><%= @user.marital_status %></td>
+                        </tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td><%= @user.gender %></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th colspan="3">Location information</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>District</td>
+                          <td><%= @user.district.name %>
+                          </td>
+                          <td>
+                            <a class="show-tab" href="#panel_edit_account"><i class=
+                            "fa fa-pencil edit-user-info"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Division</td>
+                          <td><%= @user.division.name %></td>
+                          <td>
+                            <a class="show-tab" href="#panel_edit_account"><i class=
+                            "fa fa-pencil edit-user-info"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ward</td>
+                          <td><%= @user.ward.name %></td>
+                          <td>
+                            <a class="show-tab" href="#panel_edit_account"><i class=
+                            "fa fa-pencil edit-user-info"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Location</td>
+                          <td><%= @user.location.name %></td>
+                          <td>
+                            <a class="show-tab" href="#panel_edit_account"><i class=
+                            "fa fa-pencil edit-user-info"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Sub Location</td>
+                          <% if @user.sublocations.any? %>
+                          <td><%= @user.sublocation.name %></td>
+                          <% end %>
+                          <td>
+                            <a class="show-tab" href="#panel_edit_account"><i class=
+                            "fa fa-pencil edit-user-info"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-md-8">
+                  <h2>BIO</h2>
+                  <p><%= @user.bio.try(:html_safe) %></p>
+                  <div class="row">
+                    <h2>Download</h2>
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block"><i class="fa fa-download"></i>
+                      Resume</button>
+                    </div>
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block pulsate" style=
+                      "-moz-outline-radius: 2px; outline: 0px none; box-shadow: 0px 0px 13px rgba(196, 60, 53, 0);">
+                      <i class="fa fa-download"></i> Cover Letter</button>
+                    </div>
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block"><i class="fa fa-download"></i>
+                      Education Certificates</button>
+                    </div>
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block"><i class="fa fa-download"></i>
+                      ID</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="panel_educational_background">
+              <div class="row">
+                <% if @user.educations.any? %>
+                <div class="col-md-12 titleize">
+                  <% @user.educations.each do |education| %>
+                    <h3><%= education.institution %></h3>
+                    <hr>
+                    <p><strong>Level :</strong> <%= education.level %></p>
+                    <p><strong>Years :</strong> <%= education.years %></p>
+                    <p><strong>Grade :</strong> <%= education.details %></p>
+                  <% end %>
+                </div>  
+                <% end %>  
+              </div>
+            </div>
+            <div class="tab-pane" id="panel_work_experience">
+              <div class="row">
+                <% if @user.works.any? %>
+                <div class="col-md-12 titleize">
+                  <% @user.works.each do |work| %>
+                    <h3><%= work.name %></h3>
+                    <hr>
+                    <p><strong>Position :</strong> <%= work.position %></p>
+                    <p><strong>Years of Work :</strong> <%= work.years %></p>
+                    <p><strong>Location :</strong> <%= work.location %></p>
+                    <hr>
+                    <h6>My Roles</h6>
+                    <p><%= work.description.try(:html_safe) %></p>
+                  <% end %>
+                </div>  
+                <% end %>  
+              </div>
+            </div>
+            <div class="tab-pane" id="panel_reference">
+              <div class="row">
+                <% if @user.references.any? %>
+                <div class="col-md-12 titleize">
+                  <% @user.references.each do |reference| %>
+                    <h3><%= reference.name %></h3>
+                    <hr>
+                    <p><strong>Company :</strong> <%= reference.company %></p>
+                    <p><strong>Position :</strong> <%= reference.position %></p>
+                    <p><strong>Email :</strong> <%= link_to reference.email %></p>
+                    <p><strong>Phone :</strong> <%= reference.phone %></p>
+                  <% end %>
+                </div>  
+                <% end %>  
+              </div>
+            </div>
+            
+            
+            
+            
+            <div class="tab-pane" id="panel_projects">
+              <table class="table table-striped table-bordered table-hover" id="projects">
+                <thead>
+                  <tr>
+                    <th class="center">
+                      <div class="checkbox-table">
+                        <label></label>
+                        <div class="icheckbox_flat-grey" style="position: relative;">
+                          <label><input class="flat-grey" style=
+                          "position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"
+                          type="checkbox"><ins class="iCheck-helper" style=
+                          "position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins></label>
+                        </div>
+                      </div>
+                    </th>
+                    <th>Project Name</th>
+                    <th class="hidden-xs">Client</th>
+                    <th>Date Completed</th>
+                    <th class="hidden-xs">My Contribution%</th>
+                    <th>Descriptions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if @user.projects.any? %>
+                  <% @user.projects.each do |project| %>
+                   
+                  <tr>
+                    <td class="center">
+                      <div class="checkbox-table">
+                        <label></label>
+                        <div class="icheckbox_flat-grey" style="position: relative;">
+                          <label><input class="flat-grey" style=
+                          "position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"
+                          type="checkbox"><ins class="iCheck-helper" style=
+                          "position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins></label>
+                        </div>
+                      </div>
+                    </td>
+                    <td><%= project.name %></td>
+                    <td class="hidden-xs"><%= project.client %></td>
+                    <td><%= project.date_completed.strftime("%d %B %Y") %></td>
+                    <td class="hidden-xs">
+                      <div class="progress progress-striped active progress-sm">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="<%= project.contribution %>" class=
+                        "progress-bar progress-bar-warning" role="progressbar" style="width: <%= project.contribution %>;">
+                          <span class="sr-only"><%= project.contribution %>% Complete (danger)</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="visible-md visible-lg hidden-sm hidden-xs">
+                        <!-- add this field -->
+                        <p><%#= project.description.try(:html_safe) %></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <% end %>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane" id="panel_awards">
+              <div class="row">
+                <% if @user.awards.any? %>
+                <div class="col-md-12 titleize">
+                  <% @user.awards.each do |award| %>
+                    <h3><%= award.title %></h3>
+                    <hr>
+                    <p><%=award.description.try(:html_safe) %></p>
+                    <div class="col-md-4 pull-right">
+                      <a class="btn btn-orange btn-md pull-right" href="#" type="submit">Download Award
+                  Certificate <i class="fa fa-arrow-circle-down"></i></a>
+                    </div>
+                  <% end %>
+                </div>  
+                <% end %> 
+              </div>
+            </div>
+            <div class="tab-pane" id="panel_availability">
+              <div class="row">
+                <% if @user.preferences.any? %>
+                <div class="col-md-12 titleize">
+                  <% @user.preferences.each do |preference| %>
+                    <% preference.job_categories.each do |job_category| %>
+                      <h3><%= job_category.name %></h3>
+                    <% end %>
+                    <hr>
+                    <p><strong>Highest Qualification:</strong> <%= preference.qualification %></p>
+                    <p><strong>Preferred Location:</strong> <%= preference.town_id %></p>
+                    <p><strong>Salary Expectation:</strong> <%= preference.salary %> <%= preference.denomination %></p>
+                    <p><strong>Work Type:</strong><%= preference.job_type %></p>
+                    <p><strong>Availability:</strong><%= preference.availability %></p>
+              
+                  <% end %>
+                </div>  
+                <% end %> 
+                
+                
+                <!--<div class="col-md-12">
+                  <h3>IT &amp; Telecom</h3>
+                  <hr>
+                  <p><strong>Highest Qualification:</strong> Diploma</p>
+                  <p><strong>Preferred Location:</strong> Nairobi, Nakuru, Mombasa</p>
+                  <p><strong>Salary Expectation:</strong> 60,000 KES</p>
+                  <p><strong>Work Type:</strong>Full Time</p>
+                  <p><strong>Availability:</strong>1 Month</p>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end: PAGE CONTENT-->
+  </div>
+</div>

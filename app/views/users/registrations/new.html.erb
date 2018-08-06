@@ -1,0 +1,123 @@
+<html>
+<head>
+  <title>Candidate Register</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'main-responsive', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'all', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-colorpalette', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'perfect-scrollbar', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'theme_light', media: 'all', id: 'skin_color', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'print', media: 'print', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'animate.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'settings', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'flexslider', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'colorbox', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'fullcalendar', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body class="login example2">
+  <div class="row">
+    <div class="main-login col-sm-4 col-sm-offset-4">
+      <div class="logo">
+        <%= link_to root_path do %>
+          <%= image_tag 'main_logo.png' %>
+        <% end %>
+      </div>
+
+  <div class="box-login">
+    <h3>Sign Up</h3>
+    <p>
+      Enter your personal details below:
+    </p>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-register") do |f| %>
+<%= devise_error_messages! %>
+        <fieldset>
+          <div class="form-group">
+            <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :second_name, placeholder: "Second Name", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <span class="input-icon">
+              <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+              <!-- <i class="fa fa-user"></i>  -->
+            </span>
+          </div>
+          <div class="form-group">
+            <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Re-Type Password", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <span class="input-icon">
+              <%= f.collection_select :district_id, District.all, :id, :name, { prompt: "District"}, class: "form-control" %>
+            </span>
+          </div>
+          <div class="form-group">
+            <%= f.grouped_collection_select :division_id, District.all, :divisions, :name, :id, :name, { prompt: "Division"}, class: "form-control", include_blank: true %>
+            <%#= f.collection_select :division_id, Division.all, :id, :name %>
+          </div>
+          <div class="form-group">
+            <%= f.grouped_collection_select :location_id, Division.all, :locations, :name, :id, :name, { prompt: "Location"}, class: "form-control", include_blank: true %>
+            <%#= f.collection_select :location_id, Location.all, :id, :name %>
+          </div>
+          <div class="form-group">
+            <%= f.grouped_collection_select :ward_id, Division.all, :wards, :name, :id, :name, { prompt: "Ward"}, class: "form-control", include_blank: true %>
+            <%#= f.collection_select :ward_id, Ward.all, :id, :name %>
+          </div>
+          <div class="form-group">
+            <%= f.check_box :remember_me, class: "grey agree", id: "agree" %>
+            <%= f.label "I agree to the Terms of Service and Privacy Policy ", class: "checkbox-inline" %>
+          </div>
+
+          <div class="form-actions">
+              <a class="btn btn-light-grey go-back" href="login.html" >
+                <i class="fa fa-circle-arrow-left"></i> Back
+              </a>
+              <%= f.submit "Sign up", class: "btn btn-orange pull-right" do %>
+                <i class="fa fa-arrow-circle-right"></i>
+              <% end %>
+              <!-- <a type="submit" class="btn btn-orange pull-right">
+                Register <i class="fa fa-arrow-circle-right"></i>
+              </a> -->
+            </div>
+        </fieldset>
+    <%end %>
+  </div>
+  <div class="copyright">
+    2017 &copy; Musimba Job Portal. All Rights Reserved.
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+  </script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+  </script> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'twitter-bootstrap-hover-dropdown.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.appear', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.blockUI', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.cookie', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'main', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.themepunch.plugins.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.themepunch.revolution.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.flexslider', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.stellar.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.colorbox-min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'index', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag Ckeditor.cdn_url %> 
+  <script>
+      jQuery(document).ready(function() {
+        Main.init();
+        Login.init();
+      });
+  </script>
+</body>

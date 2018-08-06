@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Candidate Login</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'main-responsive', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'all', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-colorpalette', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'perfect-scrollbar', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'theme_light', media: 'all', id: 'skin_color', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'print', media: 'print', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'animate.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'settings', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'flexslider', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'colorbox', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'fullcalendar', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body class="login example2">
+  <div class="main-login col-sm-4 col-sm-offset-4">
+    <div class="logo">
+      <%= link_to root_path do %><%= image_tag 'main_logo.png' %><%end %>
+    </div><!-- start: LOGIN BOX -->
+    <div class="box-login">
+      <h3>Sign in to your account</h3>
+      <p>Please enter your name and password to log in.</p>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-login") do |f| %>
+  
+      <fieldset>
+        <div class="form-group">
+          <%= f.email_field :email, placeholder: "e-mail", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "password", class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="form-actions">
+            <%= f.submit "Login", class: "btn btn-orange pull-right" do %>
+            <i class="fa fa-arrow-circle-right"></i>
+          <% end %>
+        </div>
+      </fieldset>
+      <% end %>
+    </div>
+    <div class="copyright">
+      2017 &copy; Musimba Job Portal. All Rights Reserved.
+    </div>
+  </div>
+</body>

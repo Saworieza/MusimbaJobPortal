@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  industry: MyString
+  nssf: MyString
+  nhif: MyString
+  kra_pin: MyString
+
+two:
+  name: MyString
+  industry: MyString
+  nssf: MyString
+  nhif: MyString
+  kra_pin: MyString

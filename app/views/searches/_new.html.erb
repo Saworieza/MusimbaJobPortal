@@ -1,0 +1,25 @@
+<!-- start: CORE BOXES CONTAINER -->
+<div class="orange">
+	<div class="container">
+	  <div class="row" style="margin-bottom:40px;">
+	    <h1 class="center" style="margin:30px;">Find the right job for you.</h1>
+	    <div class="col-md-2"></div>
+			
+		<%= form_for Search.new do |f| %>
+	    	<div class="col-md-4" style="margin-top:10px;">
+				<%= f.collection_select :job_category_id, JobCategory.order(:name), :id, :name, {prompt: "Any Category"}, {class: "form-control"} %>
+			</div>
+			<div class="col-md-4" style="margin-top:10px;">
+				<%= f.collection_select :town_id, Town.order(:name), :id, :name, {prompt: "Any Location"}, {class: "form-control"} %>
+			</div>
+
+			<div class="col-md-2" style="padding-bottom:10px;">
+				<p class="right">
+					<%= f.submit "Search", class: "btn btn-teal" %>
+				</p>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+

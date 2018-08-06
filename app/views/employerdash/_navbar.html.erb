@@ -1,0 +1,332 @@
+ <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'candidate-main', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'main-responsive-candidate', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'all', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-colorpalette', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'perfect-scrollbar', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'theme_light', media: 'all', id: 'skin_color', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'print', media: 'print', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag 'animate.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag 'settings', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag 'flexslider', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag 'colorbox', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'fullcalendar', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link type="text/css" href="http://logiclabs.co.ke/test/fo/musimba_candidate/assets/plugins/bootstrap/css/bootstrap.min.css"> 
+</head>
+<body>
+ <!-- start: HEADER -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <!-- start: TOP NAVIGATION CONTAINER -->
+      <div class="container">
+        <div class="navbar-header">
+          <!-- start: RESPONSIVE MENU TOGGLER -->
+          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="clip-list-2"></span>
+          </button>
+          <!-- end: RESPONSIVE MENU TOGGLER -->
+          <!-- start: LOGO -->
+          <!-- <a class="navbar-brand" href="index.html"> -->
+          <%= link_to employerdash_index_path do %>
+            <%= image_tag 'main_logo2.png' %>
+            <!-- <img src="assets/images/main_logo2.png"> -->
+          <!-- </a> -->
+          <% end %>
+          <!-- end: LOGO -->
+        </div>
+        <div class="navbar-tools">
+          <!-- start: TOP NAVIGATION MENU -->
+          <ul class="nav navbar-right">
+            <!-- start: TO-DO DROPDOWN -->
+            
+            <!-- end: TO-DO DROPDOWN-->
+            <!-- start: NOTIFICATION DROPDOWN -->
+            <li class="dropdown">
+              <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+                <i class="clip-notification-2"></i>
+                <span class="badge"> 11</span>
+              </a>
+              <ul class="dropdown-menu notifications">
+                <li>
+                  <span class="dropdown-menu-title"> You have 11 notifications</span>
+                </li>
+                <li>
+                  <div class="drop-down-wrapper ps-container">
+                    <ul>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-primary"><i class="fa fa-employer"></i></span>
+                          <span class="message"> New employer registration</span>
+                          <span class="time"> 1 min</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-success"><i class="fa fa-comment"></i></span>
+                          <span class="message"> New comment</span>
+                          <span class="time"> 7 min</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-success"><i class="fa fa-comment"></i></span>
+                          <span class="message"> New comment</span>
+                          <span class="time"> 8 min</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-success"><i class="fa fa-comment"></i></span>
+                          <span class="message"> New comment</span>
+                          <span class="time"> 16 min</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-primary"><i class="fa fa-employer"></i></span>
+                          <span class="message"> New employer registration</span>
+                          <span class="time"> 36 min</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-warning"><i class="fa fa-shopping-cart"></i></span>
+                          <span class="message"> 2 items sold</span>
+                          <span class="time"> 1 hour</span>
+                        </a>
+                      </li>
+                      <li class="warning">
+                        <a href="javascript:void(0)">
+                          <span class="label label-danger"><i class="fa fa-employer"></i></span>
+                          <span class="message"> employer deleted account</span>
+                          <span class="time"> 2 hour</span>
+                        </a>
+                      </li>
+                      <li class="warning">
+                        <a href="javascript:void(0)">
+                          <span class="label label-danger"><i class="fa fa-shopping-cart"></i></span>
+                          <span class="message"> Transaction was canceled</span>
+                          <span class="time"> 6 hour</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-success"><i class="fa fa-comment"></i></span>
+                          <span class="message"> New comment</span>
+                          <span class="time"> yesterday</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-primary"><i class="fa fa-employer"></i></span>
+                          <span class="message"> New employer registration</span>
+                          <span class="time"> yesterday</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-primary"><i class="fa fa-employer"></i></span>
+                          <span class="message"> New employer registration</span>
+                          <span class="time"> yesterday</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-success"><i class="fa fa-comment"></i></span>
+                          <span class="message"> New comment</span>
+                          <span class="time"> yesterday</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">
+                          <span class="label label-success"><i class="fa fa-comment"></i></span>
+                          <span class="message"> New comment</span>
+                          <span class="time"> yesterday</span>
+                        </a>
+                      </li>
+                    </ul>
+                  <div class="ps-scrollbar-x-rail" style="width: 270px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 250px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
+                </li>
+                <li class="view-all">
+                  <a href="javascript:void(0)">
+                    See all notifications <i class="fa fa-arrow-circle-o-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown current-employer">
+              <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+                <%= image_tag 'avatar-1-small.jpg', class: "circle-img" %>
+                <!-- <img src="assets/images/avatar-1-small.jpg" class="circle-img" alt=""> -->
+                <span class="employername">
+                <% if current_employer %>
+                  <%#= @employer.first_name.titleize %> <%#= @employer.last_name.titleize %>
+                <% end %>
+                </span>
+                <i class="clip-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to edit_employer_registration_path do %>
+                    <i class="clip-employer-2"></i>
+                    &nbsp;My Profile
+                  <% end %>
+                </li>
+                
+                <li class="divider"></li>
+                <li>
+                  <!-- what is this supposed to do?? -->
+                  <%= link_to edit_employer_registration_path do %>
+                  <i class="clip-locked"></i>
+                    &nbsp;Lock Screen 
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_employer_session_path, :method => :delete do %>
+                    <i class="clip-exit"></i>
+                    &nbsp;Log Out
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+            <!-- end: employer DROPDOWN -->
+          </ul>
+          <!-- end: TOP NAVIGATION MENU -->
+        </div>
+      </div>
+      <!-- end: TOP NAVIGATION CONTAINER -->
+    </div>
+    <!-- end: HEADER -->
+    <!-- start: MAIN CONTAINER -->
+    <div class="main-container">
+      <div class="navbar-content">
+       <div class="main-navigation navbar-collapse collapse">
+					<!-- start: MAIN MENU TOGGLER BUTTON -->
+					<div class="navigation-toggler">
+						<i class="clip-chevron-left"></i>
+						<i class="clip-chevron-right"></i>
+					</div>
+					<!-- end: MAIN MENU TOGGLER BUTTON -->
+					<!-- start: MAIN NAVIGATION MENU -->
+					<ul class="main-navigation-menu">
+						<li class="active open">
+							<a href="index.html"><i class="clip-home-3"></i>
+								<span class="title"> Dashboard </span><span class="selected"></span>
+							</a>
+						</li>
+						<li>
+							<%= link_to current_employer do %>
+							<i class="fa fa-building"></i>
+								<span class="title"> My Profile  </span>
+								<span class="selected"></span>
+							<% end %>
+						</li>
+						
+						<li>
+							
+							<a href="javascript:void(0)"><i class="fa fa-user"></i>
+								<span class="title"> Candidates </span><i class="icon-arrow"></i>
+								<span class="selected"></span>
+							</a>
+
+							<ul class="sub-menu">
+
+								<li>
+									<a href="applicants.html"><i class="fa fa-users"></i>
+
+										<span class="title">All Candidates</span>
+									</a>
+								</li>
+								<li>
+									<a href="shortlisted.html"><i class="fa fa-file"></i>
+										<span class="title">Shortlisted</span>
+									</a>
+								</li>
+								<li>
+									<a href="approved.html"><i class="fa fa-check"></i>
+										<span class="title">Successful</span>
+									</a>
+								</li>
+								<li>
+									<a href="rejected.html"><i class="fa fa-close"></i>
+										<span class="title">Unsuccessful</span>
+									</a>
+								</li>
+
+
+
+
+							</ul>
+						</li>
+						<li>
+							
+							<a href="jobs.html"><i class="fa fa-briefcase"></i>
+								<span class="title">  Jobs  </span>
+								<span class="selected"></span>
+							</a>
+						</li>
+						<li>
+							
+							<%= link_to new_job_path do %>
+							  <i class="fa fa-plus"></i>
+								<span class="title"> Add Job  </span>
+								<span class="selected"></span>
+							<% end %>
+						</li>
+						<li>
+							
+						<%= link_to edit_employer_registration_path do %>
+							  <i class="fa fa-cogs"></i>
+								<span class="title"> Edit My Profile  </span>
+								<span class="selected"></span>
+							</a>
+						<% end %>
+						
+							
+					</ul>
+					<!-- end: MAIN NAVIGATION MENU -->
+				</div>
+      </div>
+   
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap-hover-dropdown.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.blockUI', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.icheck.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.mousewheel', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'perfect-scrollbar', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.cookie', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'main', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap-colorpalette', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'flot/jquery.flot.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'flot/jquery.flot.pie.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'flot/jquery.flot.resize.min', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'twitter-bootstrap-hover-dropdown.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.appear', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.stellar.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.colorbox-min', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'fullcalendar', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'index', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag Ckeditor.cdn_url %> 
+    <script>
+        jQuery(document).ready(function() {
+          Main.init();
+          Login.init();
+        });
+    </script>
+    
+    <script>
+      $(function() {
+          $( "#datepicker" ).datepicker();
+      });
+    </script>

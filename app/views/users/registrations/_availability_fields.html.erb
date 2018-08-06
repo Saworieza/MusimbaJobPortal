@@ -1,0 +1,62 @@
+<div class="nested-fields">
+  <div class="col-md-6">
+    <label class="control-label">Job Category</label>
+    <%= f.collection_select :job_category_id, JobCategory.all, :id, :name, {prompt: ""}, {class: "form-control"} %>
+  </div>
+
+  <div class="col-md-12" style="margin-top:20px">
+    <div class="col-md-3">
+      <div class="form-group">
+        <label class="control-label">Your Highest Qualification</label> 
+        <span class= "input-icon">
+          <%= f.select :qualification, %w{KCPE-Certificate KCSE-Certificate Certificate Diploma Bachelor Master Doctorate/PhD}, {prompt: ""}, {class: "form-control"} %>
+        </span>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <!-- change with gem chosen -->
+        <label class="control-label">Select Preferred Location</label>
+        <%= f.collection_select :town_id, Town.all, :id, :name, {:multiple => true }, {class: "form-control"} %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <label class="control-label">Work Type</label> 
+          <span class= "input-icon">
+            <%= f.select :work_type, ["Full Time", "Internship", "Volunteer", "Short Term", "Other Type"], {prompt: ""}, {class: "form-control"} %>
+          </span>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <label class="control-label">Your Availability</label> 
+          <span class= "input-icon">
+            <%= f.select :availability, ["Immediately", "1 Week", "2 Week", "3 Week", "1 month", "More Than One Month"], {prompt: ""}, {class: "form-control"} %>
+          </span>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <div class="col-md-6">
+          <label class="control-label">Currency</label>
+          <%= f.select :currency, ["KES", "EUR", "USD", "TZS", "RWF", "UGS", "ZAR"], {prompt: ""}, {class: "form-control"} %>
+        </div>
+        <div class="col-md-6">
+          <label class="control-label">Amount</label> 
+            <span class="input-icon">
+              <%= f.text_field :sal_expectation, class: "form-control" %> 
+            </span>
+        </div>
+      </div>
+    </div>
+            
+    <div class="col-md-4 pull-right" style="margin-top:20px;">
+      <%= link_to_remove_association "Remove Preference", f, class: "btn btn-teal btn-md pull-right" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="nested-fields">
+  <div class="col-md-6">
+    <%= f.text_field :name, placeholder: "Company Name", class: "form-control" %>
+  </div>
+
+  <div class="col-md-12" style="margin-top:20px">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="control-label">Position</label>
+        <span class="input-icon">
+          <%= f.text_field :position,class: "form-control"  %>
+          <i class="fa fa-user"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="control-label">Years of Work</label> 
+        <span class="input-icon">
+          <%= f.select :years, %w{1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31}, {prompt: ""}, {class: "form-control"} %>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="control-label">Location</label> 
+        <span class="input-icon">
+          <%= f.text_field :location, class: "form-control" %>
+          <i class="fa fa-map-marker"></i></span>
+        </span>
+      </div>
+    </div>
+  
+    <div class="col-md-12" style="margin-top:20px">
+      <%= f.cktext_area :description, placeholder: "Brief description about your roles in that Company" %>
+    </div>
+    <div class="col-md-4 pull-right" style="margin-top:20px;">
+      <%= link_to_remove_association "Remove Company", f, class: "btn btn-teal btn-md pull-right" %>
+    </div>
+  </div>
+</div>

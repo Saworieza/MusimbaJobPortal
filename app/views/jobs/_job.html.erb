@@ -1,0 +1,35 @@
+
+  <div class="blog-posts">
+    <%# @job_category.jobs.each do |job| %>
+    <article>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="post-image">
+            <div class="flexslider" data-plugin-options='{"directionNav":true}'>
+              <ul class="slides">
+                <li><%= link_to(image_tag job.logo.url(:medium) )%></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="post-content">
+            <h2><%= link_to job.title, job %></h2>
+            <div class="post-meta">
+              <span>Posted on <i class="fa fa-calendar"></i>
+              <%= job.created_at.strftime("%B %d, %Y") %></span> <span>Closes on <i class=
+              "fa fa-calendar"></i> <%= job.closes_on.strftime("%B %d, %Y") %></span>
+              <span><i class="fa fa-tag"></i> <%if job.job_category %>
+              <%= link_to JobCategory.find(job.job_category_id).name, job_category_path(job.job_category_id) %>
+              <%end %></span> <span><i class="fa fa-map-marker"></i> <%if job.town %>
+              <%= link_to Town.find(job.town_id).name, town_path(job.town_id) %> <%end %></span> 
+              <!-- to connect applicants count -->
+               <span><i class="fa fa-file"></i> <a href="#">36 Applicants</a></span>
+            </div>
+            <p>
+            <%= truncate(job.details.html_safe, :length => 228, separator: ' ', :escape => false) %></p><%= link_to 'Apply Now', job, class: "btn btn-md btn-teal pull-left" %><%= link_to 'Read More ...', job, class: "btn btn-md btn-default pull-left m-left" %>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div><%#= will_paginate @jobs, renderer: BootstrapPagination::Rails %>

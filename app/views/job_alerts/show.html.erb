@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @job_alert.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @job_alert.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @job_alert.phone %>
+</p>
+
+<%= link_to 'Edit', edit_job_alert_path(@job_alert) %> |
+<%= link_to 'Back', job_alerts_path %>

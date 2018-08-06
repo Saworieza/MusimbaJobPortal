@@ -1,0 +1,453 @@
+<title>Edit Profile</title>
+<!-- this page - here be dragons -->
+<%= render 'userdash/navbar' %>
+
+<div class="main-content">
+  <!-- start: PANEL CONFIGURATION MODAL FORM -->
+  <div aria-hidden="true" class="modal fade" id="panel-config" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+          <h4 class="modal-title">Panel Configuration</h4>
+        </div>
+        <div class="modal-body">
+          Here will be a configuration form
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+          <button class="btn btn-primary" type="button">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- end: SPANEL CONFIGURATION MODAL FORM -->
+  <div class="container" style="min-height: 789px;">
+    <!-- start: PAGE HEADER -->
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- start: PAGE TITLE & BREADCRUMB -->
+        <ol class="breadcrumb">
+          <li>
+            <i class="clip-home-3"></i> <a href="index.html">Home</a>
+          </li>
+          <li class="active">Edit My Profile</li>
+        </ol>
+        <div class="page-header">
+          <h1>Edit Profile</h1>
+        </div><!-- end: PAGE TITLE & BREADCRUMB -->
+      </div>
+    </div><!-- end: PAGE HEADER -->
+    <!-- start: PAGE CONTENT -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="tabbable">
+          <ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+            <li class="active">
+              <a data-toggle="tab" href="#panel_overview">Overview</a>
+            </li>
+            <li class="">
+              <a data-toggle="tab" href="#panel_educational_background">Educational background</a>
+            </li>
+            <li class="">
+              <a data-toggle="tab" href="#panel_work_experience">Work Experience</a>
+            </li>
+            <li class="">
+              <a data-toggle="tab" href="#panel_reference">Referees</a>
+            </li>
+            <li class="">
+              <a data-toggle="tab" href="#panel_projects">Projects</a>
+            </li>
+            <li class="">
+              <a data-toggle="tab" href="#panel_awards">Award &amp; Distinction</a>
+            </li>
+            <li class="">
+              <a data-toggle="tab" href="#panel_availability">Job Preferences</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#panel_uploads">Uploads</a>
+            </li>
+          </ul>
+          
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+          <div class="tab-content">
+            <div class="tab-pane active" id="panel_overview">
+              <div class="row">
+                <div class="col-md-12">
+                 <h3>Account Info</h3>
+                 <hr>
+                </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">First Name</label> 
+                     <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Last Name</label> 
+                    <%= f.text_field :second_name, placeholder: "Second Name", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Last Name</label> 
+                    <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Email Address</label> 
+                    <%= f.email_field :email, placeholder: "email@company.com", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Phone</label> 
+                    <%= f.text_field :phone, placeholder: "(+254) 712 345 678", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">ID Number</label> 
+                    <%= f.text_field :id_number, placeholder: "30123542", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label :password, class: "control-label" %> <i>(leave blank if you don't want to change it)</i><br />
+                      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                 </div>
+                  <div class="form-group">
+                    <label class="control-label">Confirm Password</label> 
+                    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "confirm password", class: "form-control" %>
+                  </div>
+                </div>
+               
+               <div class="col-md-6">
+                  <div class="form-group connected-group">
+                    <label class="control-label">Date of Birth</label>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group">
+                           <%= f.text_field :date_of_birth, data:{ provide: "datepicker", behaviour: 'datepicker', date_format: "dd-mm-yyyy", date_viewmode: "years"}, class: "date-picker form-control" %>
+                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <%= f.label :gender_male, 'male' %>
+                    <%= f.radio_button :gender, 'male', :checked => true %>
+                    <%= f.label :gender_female, 'female' %>
+                    <%= f.radio_button :gender, 'female' %><br />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="control-label">Marital Status</label>
+                    <div>
+                      <%= f.select :marital_status, %w{Single Married Divorced}, {prompt: "Status"}, {class: "form-control"} %>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="control-label">
+                      Physical Address
+                    </label>
+                    <div>
+                      <%= f.text_area :physical_address, class: "form-control" %>
+                    </div>
+                  </div>
+                    
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="control-label">District</label>
+                        <%#= check_box_tag "district[district_ids][]", district.id, @user.districts.include?(district), :id=>"district_id_#{district.id}" %>
+                        <%#= label_tag "district_id_#{district.id}", district.name %>
+                        <%= f.collection_select :district_id, District.all, :id, :name, {prompt: "District"}, {class: "form-control"} %>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="control-label">Division</label> 
+                        <%= f.grouped_collection_select :division_id, District.all, :divisions, :name, :id, :name, { prompt: "Division"}, class: "form-control", include_blank: true %>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="control-label">Ward</label> 
+                        <%= f.grouped_collection_select :ward_id, Division.all, :wards, :name, :id, :name, { prompt: "Ward"}, class: "form-control", include_blank: true %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="control-label">Location</label> 
+                        <%= f.grouped_collection_select :location_id, Division.all, :locations, :name, :id, :name, { prompt: "Location"}, class: "form-control", include_blank: true %>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="control-label">Sub Location</label> 
+                        <%= f.grouped_collection_select :sublocation_id, Location.all, :sublocations, :name, :id, :name, { prompt: "SubLocation"}, class: "form-control", include_blank: true %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="control-label">Village</label> 
+                        <%= f.text_area :village_id, class: "form-control" %>
+                        <%#= f.grouped_collection_select :village_id, Sublocation.all, :villages, :name, :id, :name, { prompt: "Village"}, class: "form-control", include_blank: true %>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Image Upload</label>
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;">
+                        <%= image_tag @user.avatar.url(:thumb)%>
+                      </div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
+                      <div class="user-edit-image-buttons">
+                        <span class="btn btn-light-grey btn-file">
+                          <span class="fileupload-new">
+                            <i class="fa fa-picture"></i> Select image
+                          </span>
+                          <span class="fileupload-exists">
+                            <i class="fa fa-picture"></i>
+                            Change
+                          </span> 
+                          <%= f.file_field :avatar %>
+                        </span>
+                        <a class="btn fileupload-exists btn-light-grey" data-dismiss="fileupload" href="#">
+                          <i class="fa fa-times"></i> 
+                          Remove
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>Additional Info</h3>
+                  <hr>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Twitter</label> 
+                    <span class="input-icon">
+                      <%= f.text_field :twitter, class: "form-control" %>
+                      <i class="clip-twitter"></i>
+                    </span>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="control-label">Linkedin</label> 
+                      <span class="input-icon">
+                        <%= f.text_field :linkedin, class: "form-control" %>
+                        <i class="clip-linkedin"></i>
+                      </span>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Skype</label> <span class=
+                    "input-icon">
+                      <%= f.text_field :skype, class: "form-control" %>
+                     <!-- <input class="form-control" placeholder="" type="text">-->
+                    <i class="clip-skype"></i></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Google Plus</label> <span class=
+                    "input-icon">
+                      <%= f.text_field :gplus, class: "form-control" %>
+                     <!-- <input class="form-control" placeholder="" type="text">-->
+                    <i class="clip-google-plus"></i></span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <div>
+                    Required Fields
+                    <hr>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" style="margin-top:20px">
+                  <label class="control-label">Bio</label>
+                  <%= f.cktext_area :bio, class: "form-control" %>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <p>By clicking UPDATE, you are agreeing to the Policy and Terms &amp;
+                  Conditions.</p>
+                </div>
+              </div>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+              </div>
+              
+              <div class="tab-pane" id="panel_educational_background">
+                <div class="row">
+                  <div id="educations">
+                    <%= f.fields_for :educations do |edu| %>
+                      <%= render 'education_fields', f: edu %>
+                    <% end %>
+                    <div class="col-md-4 pull-right" style="margin-top:20px;">
+                      <%= link_to_add_association 'Add Education Level', f, :educations, class: "btn btn-orange btn-md pull-right" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane" id="panel_work_experience">
+                <div class="row">
+                  <div id="work">
+                    <%= f.fields_for :works do |work| %>
+                      <%= render 'work_fields', f: work %>
+                    <% end %>
+                    <div class="col-md-4 pull-right" style="margin-top:20px;">
+                      <%= link_to_add_association 'Add New Company Level', f, :works, class: "btn btn-orange btn-md pull-right" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="tab-pane" id="panel_reference">
+                <div class="row">
+                  <div id="reference">
+                    <%= f.fields_for :references do |ref| %>
+                      <%= render 'reference_fields', f: ref %>
+                    <% end %>
+                    <div class="col-md-4 pull-right" style="margin-top:20px;">
+                      <%= link_to_add_association 'Add New Referee', f, :references, class: "btn btn-orange btn-md pull-right" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="tab-pane" id="panel_projects">
+                <div class="row">
+                  <div class="col-md-12" style="margin-top:20px">
+                    <div id="project">
+                      <%= f.fields_for :projects do |project| %>
+                        <%= render 'project_fields', f: project %>
+                      <% end %>
+                      <div class="col-md-4 pull-right" style="margin-top:20px;">
+                        <%= link_to_add_association 'Add New Project', f, :projects, class: "btn btn-orange btn-md pull-right" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="tab-pane" id="panel_awards">
+                <div class="row">
+                  <div id="award">
+                    <%= f.fields_for :awards do |award| %>
+                      <%= render 'award_fields', f: award %>
+                    <% end %>
+                    <div class="col-md-4 pull-right" style="margin-top:20px;">
+                      <%= link_to_add_association 'Add New Award', f, :awards, class: "btn btn-orange btn-md pull-right" %>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+
+              <div class="tab-pane" id="panel_availability">
+                <div class="row">
+                  <div id="availability">
+                    <%= f.fields_for :preferences do |pref| %>
+                      <%= render 'preference_fields', f: pref %>
+                    <% end %>
+                    <div class="col-md-4 pull-right" style="margin-top:20px;">
+                      <%= link_to_add_association 'Add Job Preference', f, :preferences, class: "btn btn-orange btn-md pull-right" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="tab-pane" id="panel_uploads">
+                <div class="row">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <span class="btn btn-file"><span class="fileupload-new pull-left">Upload
+                      Resume</span><span class="fileupload-exists"><i class=
+                      "fa fa-picture"></i></span> <input type="file"></span>
+                    </div>
+                    <div class="col-md-3">
+                      <span class="btn btn-file"><span class="fileupload-new pull-left">Upload Cover
+                      Letter</span><span class="fileupload-exists"><i class=
+                      "fa fa-picture"></i></span> <input type="file"></span>
+                    </div>
+                    <div class="col-md-3">
+                      <span class="btn btn-file"><span class="fileupload-new pull-left">Upload KCPE
+                      Certificates</span><span class="fileupload-exists"><i class=
+                      "fa fa-picture"></i></span> <input type="file"></span>
+                    </div>
+                    <div class="col-md-3">
+                      <span class="btn btn-file"><span class="fileupload-new pull-left">Upload KCSE
+                      Certificates</span><span class="fileupload-exists"><i class=
+                      "fa fa-picture"></i></span> <input type="file"></span>
+                    </div>
+                    <div class="col-md-3">
+                      <span class="btn btn-file"><span class="fileupload-new pull-left">Upload
+                      Tertiary Certificates</span><span class="fileupload-exists"><i class=
+                      "fa fa-picture"></i></span> <input type="file"></span>
+                    </div>
+                    <div class="col-md-3">
+                      <span class="btn btn-file">
+                        <span class="fileupload-new pull-left">Upload ID Front (Coloured Copy)</span>
+                        <span class="fileupload-exists">
+                          <i class="fa fa-picture"></i>
+                        </span> 
+                        <%= f.file_field :idfront %>
+                      </span>
+                    </div>
+                    <div class="col-md-3">
+                      <span class="btn btn-file">
+                        <span class="fileupload-new pull-left">Upload ID Back (Coloured Copy)</span> 
+                        <span class="fileupload-exists">
+                          <i class="fa fa-picture"></i>
+                        </span> 
+                        <%= f.file_field :idback %>
+                      </span>
+                    </div>
+                    <div class="col-md-3">
+                      <span class="btn btn-file"><span class="fileupload-new pull-left">Uploads
+                      Certificate (Awards)</span> <span class="fileupload-exists"><i class=
+                      "fa fa-picture"></i></span> <input type="file"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 center">
+        <div>
+          <%= f.submit 'Update', class: "btn btn-teal btn-md center" %>
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+<!--<h3>Cancel my account</h3>
+<p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<%#= link_to "Back", :back %>-->
+<script>
+  $(document).on("page:load ready", function(){
+    $("input.datepicker").datepicker();
+  });
+</script>

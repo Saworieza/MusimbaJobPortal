@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- fix the icons later -->
+<html>
+<head>
+  <title>Candidate Register</title>
+</head>
+ 
+      <%= render 'userdash/navbar' %>
+      <!-- start: PAGE -->
+      <div class="main-content">
+        <!-- start: PANEL CONFIGURATION MODAL FORM -->
+        <div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  ×
+                </button>
+                <h4 class="modal-title">Panel Configuration</h4>
+              </div>
+              <div class="modal-body">
+                Here will be a configuration form
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- end: SPANEL CONFIGURATION MODAL FORM -->
+        <div class="container" style="min-height: 760px;">
+          <!-- start: PAGE HEADER -->
+          <div class="row">
+            <div class="col-sm-12">
+              <!-- start: STYLE SELECTOR BOX -->
+              
+              <!-- end: STYLE SELECTOR BOX -->
+              <!-- start: PAGE TITLE & BREADCRUMB -->
+      
+              <div class="page-header">
+                <h1>Dashboard</h1>
+              </div>
+              <!-- end: PAGE TITLE & BREADCRUMB -->
+            </div>
+          </div>
+          <!-- end: PAGE HEADER -->
+          <!-- start: PAGE CONTENT -->
+                    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="panel-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block">
+                        <i class="fa fa-briefcase"></i>
+                        New Jobs 
+                        <!-- what constitutes new, created in the last x number of time, or just the latest y jobs -->
+                        <span class="badge badge-primary"> <%= @jobs.count %></span>
+                      </button>
+                    </div>
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block">
+                        <i class="fa fa-times"></i>
+                        Closed  Jobs <span class="badge badge-teal"> 4 </span>
+                      </button>
+                    </div>
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block">
+                        <i class="fa fa-user"></i>
+                        Emplyees who viewed my Profile <span class="badge badge-danger"> 6 </span>
+                      </button>
+                    </div>
+                    <div class="col-sm-3">
+                      <button class="btn btn-icon btn-block">
+                        <i class="fa fa-file"></i>
+                        Jobs i have applied<span class="badge badge-warning"> 47</span>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+                      </div>
+                    </div>
+                    
+                          
+          <div class="row">
+            <div class="col-md-12">
+              <!-- start: TIMELINE PANEL -->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <i class="fa fa-external-link-square"></i>
+                  Actions Timeline
+                  <div class="panel-tools">
+                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                    </a>
+                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                      <i class="fa fa-wrench"></i>
+                    </a>
+                    <a class="btn btn-xs btn-link panel-refresh" href="#">
+                      <i class="fa fa-refresh"></i>
+                    </a>
+                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                      <i class="fa fa-resize-full"></i>
+                    </a>
+                    <a class="btn btn-xs btn-link panel-close" href="#">
+                      <i class="fa fa-times"></i>
+                    </a>
+                  </div>
+                </div>
+                  <div class="panel-body">
+                    <div id="timeline" class="demo1">
+                      <div class="timeline">
+                        <div class="spine"></div>
+                        <% @job_months.keys.sort.each do |month, jobs| %>
+                        <div class="date_separator">
+                          <span><%= month.strftime("%B %Y") %></span>
+                        </div>
+                          <ul class="columns">
+                            <% for job in @job_months[month] %>
+                            <li>
+                              <div class="timeline_element teal">
+                                <div class="timeline_title">
+                                  <span class="timeline_label"><%= job.title %></span>
+                                  <span class="timeline_date"><%= job.closes_on.to_date.to_s(:long) %></span>
+                                </div>
+                                  <div class="content"><%= truncate(job.details.html_safe, :length => 400, separator: ' ', :escape => false) %></div>
+                                    <div class="readmore"> 
+                                      <%= link_to job, class: "btn btn-info" do %>
+                                        Read More <i class="fa fa-arrow-circle-right"></i>
+                                      <% end %>
+                                      <a href="success.html" class="btn btn-warning">
+                                        Apply Now <i class="fa fa-check-circle"></i>
+                                      </a>
+                                    </div>
+                                
+                              </div>
+                            </li>
+                            <% end %>
+                          </ul>
+                        <% end %>
+                      </div>
+                  </div>
+                <!-- end: TIMELINE PANEL -->
+                </div>
+          </div>
+        </div>
+      </div>
+          
+          
+          <!-- end: PAGE CONTENT-->
+        </div>
+      </div>
+      <!-- end: PAGE -->
+    </div>
+    <!-- end: MAIN CONTAINER -->
+    <!-- start: FOOTER -->
+    <footer>
+      <div class="footer clearfix ">
+        <div class="footer-inner">
+          2017 © Musimba Job Portal. All Rights Reserved.
+        </div>
+        <div class="footer-items">
+          <span class="go-top"><i class="clip-chevron-up"></i></span>
+        </div>
+      </div>
+    </footer>
+    <!-- end: FOOTER -->
+    <div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              ×
+            </button>
+            <h4 class="modal-title">Event Management</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-light-grey">
+              Close
+            </button>
+            <button type="button" class="btn btn-danger remove-event no-display">
+              <i class="fa fa-trash-o"></i> Delete Event
+            </button>
+            <button type="submit" class="btn btn-success save-event">
+              <i class="fa fa-check"></i> Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	
+  
+</body>

@@ -1,0 +1,1 @@
+json.array! @job_alerts, partial: 'job_alerts/job_alert', as: :job_alert

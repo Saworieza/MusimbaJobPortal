@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Branch name:</strong>
+  <%= @branch.branch_name %>
+</p>
+
+<p>
+  <strong>Contact person:</strong>
+  <%= @branch.contact_person %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @branch.role %>
+</p>
+
+<p>
+  <strong>Box number:</strong>
+  <%= @branch.box_number %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @branch.size %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @branch.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @branch.email %>
+</p>
+
+<p>
+  <strong>Building:</strong>
+  <%= @branch.building %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @branch.street %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @branch.company %>
+</p>
+
+<%= link_to 'Edit', edit_branch_path(@branch) %> |
+<%= link_to 'Back', branches_path %>

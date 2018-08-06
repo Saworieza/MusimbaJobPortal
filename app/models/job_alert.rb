@@ -1,0 +1,2 @@
+class JobAlert < ApplicationRecord
+end

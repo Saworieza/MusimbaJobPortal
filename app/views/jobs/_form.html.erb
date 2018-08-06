@@ -1,0 +1,68 @@
+  <%= form_for @job, html: { multipart: true } do |f| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.file_field :logo %>
+  </div>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :closes_on %>
+    <%= f.date_select :closes_on %>
+  </div>
+
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.cktext_area :details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :salary_from %>
+    <%= f.number_field :salary_from %>
+  </div>
+
+  <div class="field">
+    <%= f.label :salary_to %>
+    <%= f.number_field :salary_to %>
+  </div>
+
+    <%= f.label :responsibilities %>
+  <div class="field">
+    <%= f.cktext_area :responsibilities %>
+  </div>
+
+    <%= f.label :qualifications %>
+  <div class="field">
+    <%= f.cktext_area :qualifications %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Town" %>
+    <%#= f.collection_select(:location_id, Location.all, :id, :town, {:prompt => "Please Select Location (max 3)"}, {:multiple => true}) %>
+
+    <%= f.collection_select :town_id, Town.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Job Category" %>
+    <%= f.collection_select :job_category_id, JobCategory.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>

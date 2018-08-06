@@ -1,0 +1,87 @@
+<aside class="sidebar">
+  <div class="tabs">
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active">
+        <a data-toggle="tab" href="#popularPosts"><i class="fa fa-star"></i> Popular</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#recentPosts">Recent</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="popularPosts">
+        <ul class="post-list">
+          <li>
+            <div class="post-image">
+              <div class="img-thumbnail">
+                <%= link_to image_tag("popular.jpg"), root_path %>
+              </div>
+            </div>
+            <div class="post-info">
+              <a href="#">Human Resource Manager</a>
+              <div class="post-meta">
+                Oct 10, 2016
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="post-image">
+              <div class="img-thumbnail">
+                <%= link_to image_tag("recent.jpg"), root_path %>
+              </div>
+            </div>
+            <div class="post-info">
+              <a href="#">Accounting &amp; Auditing</a>
+              <div class="post-meta">
+                Sep 29, 2016
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="post-image">
+              <div class="img-thumbnail">
+                <%= link_to image_tag("popular.jpg"), root_path %>
+              </div>
+            </div>
+            <div class="post-info">
+              <a href="#">Web Development</a>
+              <div class="post-meta">
+                Oct 21, 2016
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="recentPosts">
+        <ul class="post-list">
+          <% @job.each do |job| %>
+          <li>
+            <div class="post-image">
+              <div class="img-thumbnail">
+                <%= link_to (image_tag job.logo.url(:thumb)), job %>
+              </div>
+            </div>
+            <div class="post-info">
+              <a href="#"><%= link_to job.title, job %></a>
+              <div class="post-meta">
+                <%= job.closes_on.strftime("%b %d, %Y")%>
+              </div>
+            </div>
+          </li>
+          <%end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <%# @job_views.each do |job_view| %>
+    <%#= link_to job_view.title, job_view %>
+  <%# end %>
+
+  <h4>Latest job Categories</h4>
+  <ul class="nav nav-list blog-categories">
+    <% @job_categs.each do |job_categ| %>
+    <li><%= link_to job_categ.name, job_categ %></li><%end %>
+  </ul>
+</aside>

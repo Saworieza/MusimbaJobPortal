@@ -1,0 +1,1 @@
+json.partial! "job_alerts/job_alert", job_alert: @job_alert

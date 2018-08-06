@@ -1,0 +1,129 @@
+<!-- start: TOP BAR -->
+      <div class="clearfix " id="topbar">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <!-- start: TOP BAR CALL US -->
+              <div class="callus">
+                Call Us: (+254) 715 614 675 - Mail:
+                <a href="mailto:info@example.com">
+                  info@musimbajobportal.co.ke
+                </a>
+              </div>
+              <!-- end: TOP BAR CALL US -->
+            </div>
+            <div class="col-sm-6">
+              <!-- start: TOP BAR SOCIAL ICONS -->
+              <div class="social-icons">
+                <ul>
+                  <li class="social-facebook tooltips" data-original-title="Facebook" data-placement="bottom">
+                    <a target="_blank" href="http://facebook.com">
+                      Facebook
+                    </a>
+                  </li>
+                  <li class="social-twitter tooltips" data-original-title="Twitter" data-placement="bottom">
+                    <a target="_blank" href="http://www.twitter.com">
+                      Twitter
+                    </a>
+                  </li>
+                  
+                  <li class="social-google tooltips" data-original-title="Google" data-placement="bottom">
+                    <a target="_blank" href="http://google.com">
+                      Google+
+                    </a>
+                  </li>
+                  <li class="social-linkedin tooltips" data-original-title="LinkedIn" data-placement="bottom">
+                    <a target="_blank" href="http://linkedin.com">
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li class="social-youtube tooltips" data-original-title="YouTube" data-placement="bottom">
+                    <a target="_blank" href="http://youtube.com/">
+                      YouTube
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+              <!-- end: TOP BAR SOCIAL ICONS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<div class="navbar navbar-default navbar-fixed-top space-top" role="navigation">
+      <!-- start: TOP NAVIGATION CONTAINER -->
+      <div class="container">
+        <div class="navbar-header">
+          <!-- start: RESPONSIVE MENU TOGGLER -->
+           <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"> </span>
+          </button>
+          <!-- end: RESPONSIVE MENU TOGGLER -->
+           <!-- start: LOGO -->
+            <%= link_to root_path, :class => "navbar-brand" do %>
+              <%#= image_tag 'main_logo.png' %>
+              <img src="/assets/main_logo.png">
+            <% end %>
+          <!-- end: LOGO -->
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="">
+              <%= nav_link 'Home', root_path %></a>
+            </li>
+            <li>
+              <%= nav_link 'Explore Careers', jobs_path %>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href=
+              "#">About Us <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="">
+                  <%= nav_link 'Employers', employers_path %>
+                </li>
+                <li>
+                  <%= nav_link 'About Musimba', about_path %>
+                </li>
+                <li>
+                  <%= nav_link 'FAQS', faqs_path %>
+                </li>
+                <li>
+                  <%= nav_link 'Contact us', contact_path %>
+                </li>
+              </ul>
+            </li>
+            <li>|</li>
+            <% if user_signed_in? %>
+            <li class="m-left">
+              <p style="margin: -0.15em 0">
+                <%= link_to('My Profile', userdash_index_path, class: "btn btn-primary btn-md") %>
+              </p>
+            </li>
+              <% else %>
+            <li class="menu-search m-left" >
+              <p style="margin: -0.15em 0">
+                <%= link_to('Login', new_user_session_path, class: "btn btn-primary btn-md")  %>
+              </p>
+            </li>
+            <li class="menu-search m-left" >
+              <p style="margin: -0.15em 0">
+                <%= link_to('SIGN UP', register_path, class: "btn btn-teal btn-md")  %> 
+               </p>
+            </li>
+            <li class="menu-search m-left">
+              <p style="margin: -0.15em 0">
+              <!-- temporary placing for demo only -->
+                <%= link_to 'POST A JOB', new_job_path, class: "btn btn-orange btn-md" %>
+              </p>
+            </li>
+            <% end %>
+            
+          </ul>
+        </div>
+      </div><!-- end: TOP NAVIGATION CONTAINER -->
+    </div>

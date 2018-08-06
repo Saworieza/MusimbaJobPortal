@@ -1,0 +1,82 @@
+<div class="nested-fields">
+  <div class="col-md-6">
+		<label class="control-label">
+			Your Job Catergories 
+		</label>
+       <%#= f.label :job_category_ids, "Categories" %><br />
+       <%#= f.collection_select :job_category_ids, JobCategory.order(:name), :id, :name, {}, { multiple: true } %>
+       
+       <% JobCategory.all.each do |job_category| %>
+         <%= check_box_tag "preference[job_category_ids][]", job_category.id %>
+         <%= job_category.name %><br>
+       <% end %>
+       
+       
+       
+       
+       
+  </div>
+    <div class="col-md-12" style="margin-top:20px">
+      <div class="col-md-3">
+        <div class="form-group">
+				  <label class="control-label">
+					  Your Highest Qualification
+					</label>
+				  <span class="input-icon">
+            <%= f.select :qualification, %w{KCPE-Certificate KCSE-Certificate Certificate Diploma Bachelor Master Doctorate/PhD}, {prompt: ""}, {class: "form-control"} %>
+          </span>
+        </div>
+      </div>
+        
+      <div class="col-md-3">
+        <div class="form-group">
+					<label class="control-label">
+						Your Preferred Locations
+					</label>
+					<%= f.collection_select :town_id, Town.all, :id, :name, {:multiple => true }, {class: "form-control"} %>
+				</div>
+			</div>
+				
+			<div class="col-md-3">
+        <div class="form-group">
+					<label class="control-label">
+						Your Preferred Job Type
+					</label>
+				  <span class="input-icon">
+				    <%= f.select :job_type, ["Job Type", "Full Time", "Internship", "Volunteer", "Short Term", "Other Type"], {prompt: ""}, {class: "form-control"} %>
+          </span>
+        </div>
+      </div>
+        
+      <div class="col-md-3">
+          <div class="form-group">
+						<label class="control-label">
+						 Your Availability
+						</label>
+						<span class="input-icon">
+              <%= f.select :availability, ["Immediately", "1 Week", "2 Week", "3 Week", "1 month", "More Than One Month"], {prompt: ""}, {class: "form-control"} %>
+            </span>
+          </div>
+        </div>
+        
+      <div class="col-md-3">
+				<label class="control-label">
+					Your Preferred Salary
+				</label>
+				<div class="form-group">
+          <div class="col-md-6">
+              <%= f.select :denomination, ["KES", "EUR", "USD", "TZS", "RWF", "UGS", "ZAR"], {prompt: ""}, {class: "form-control"} %>
+            </div>
+          <div class="col-md-6">
+							<span class="input-icon">
+                <%= f.text_field :salary, placeholder: "salary" %>
+              </span>
+            </div>
+        </div>
+      </div>
+
+    <div class="col-md-4 pull-right" style="margin-top:20px;">
+      <%= link_to_remove_association "Remove Preference", f, class: "btn btn-teal btn-md pull-right" %>
+    </div>
+  </div>
+</div>

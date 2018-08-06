@@ -1,0 +1,167 @@
+<%= render 'employerdash/navbar' %>
+<div class="main-content">
+  <!-- start: PANEL CONFIGURATION MODAL FORM -->
+  <div aria-hidden="true" class="modal fade" id="panel-config" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+          <h4 class="modal-title">Panel Configuration</h4>
+        </div>
+        <div class="modal-body">
+          Here will be a configuration form
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+          <button class="btn btn-primary" type="button">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- end: SPANEL CONFIGURATION MODAL FORM -->
+  <div class="container" style="min-height: 789px;">
+    <!-- start: PAGE HEADER -->
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- start: PAGE TITLE & BREADCRUMB -->
+        <ol class="breadcrumb">
+          <li>
+            <i class="clip-home-3"></i> <a href="index.html">Home</a>
+          </li>
+          <li class="active">Edit My Profile</li>
+        </ol>
+        <div class="page-header">
+          <h1>Edit Profile</h1>
+        </div><!-- end: PAGE TITLE & BREADCRUMB -->
+      </div>
+    </div><!-- end: PAGE HEADER -->
+    <!-- start: PAGE CONTENT -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="tabbable">
+          <ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+            <li class="active">
+              <a data-toggle="tab" href="#panel_overview">Overview</a>
+            </li>
+            <li class="">
+              <a data-toggle="tab" href="#panel_branches">Branches</a>
+            </li>
+          </ul>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+           <div class="tab-content">
+            <div class="tab-pane active" id="panel_overview">
+              <div class="row">
+                <div class="col-md-12">
+                 <h3>Account Info</h3>
+                 <hr>
+                </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Company Name</label> 
+                     <%= f.text_field :business_name, placeholder: "Company Name", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Industry</label> 
+                     <%= f.text_field :industry, placeholder: "Industry", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Email</label> 
+                     <%= f.email_field :email, placeholder: "First Name", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Website</label> 
+                     <%= f.text_field :website, placeholder: "Website", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Phone</label> 
+                     <%= f.text_field :phone, placeholder: "Phone", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label :password, class: "control-label" %>
+                      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                 </div>
+                  <div class="form-group">
+                    <label class="control-label">Confirm Password</label> 
+                    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "confirm password", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Date Founded</label> 
+                     <%= f.text_field :date_founded, placeholder: "Date Founded", class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">P.O.Box</label> 
+                     <%= f.text_field :box, placeholder: "P. O. Box", class: "form-control" %>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="control-label">County</label>
+                    <%= f.collection_select :county_id, County.all, :id, :name, {prompt: "County"}, {class: "form-control"} %>
+                  </div>
+                  
+                    <div class="form-group">
+                      <label class="control-label">Constituency</label> 
+                      <%= f.grouped_collection_select :constituency_id, County.all, :constituencies, :name, :id, :name, { prompt: "Constituency"}, class: "form-control", include_blank: true %>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Ward</label>
+                      <%= f.collection_select :ward_id, Ward.all, :id, :name, {prompt: "Ward"}, {class: "form-control"} %>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Town</label>
+                      <%= f.collection_select :town_id, Town.all, :id, :name, {prompt: "Town"}, {class: "form-control"} %>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Building</label> 
+                       <%= f.text_field :building, placeholder: "Building", class: "form-control" %>
+                    </div>
+                    <div class="form-group">
+                    <label class="control-label">Street</label> 
+                     <%= f.text_field :street, placeholder: "Street", class: "form-control" %>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="control-label">KRA Pin</label>
+                    <%= f.text_field :kra_pin, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">NHIF</label>
+                    <%= f.text_field :nhif_number, class: "form-control" %>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">NSSF</label>
+                    <%= f.text_field :nssf_number, class: "form-control" %>
+                  </div>
+                  
+                   <div class="form-group">
+                      <label class="control-label">Twitter</label>
+                      <%= f.text_field :twitter, class: "form-control" %>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="control-label">GPlus</label>
+                      <%= f.text_field :gplus, class: "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Linkedin</label>
+                      <%= f.text_field :linkedin, class: "form-control" %>
+                    </div>
+                                    
+                  
+                  <div class="tab-pane" id="panel_branches">
+                    <div class="row">
+                      <div id="branch">
+                        <%= f.fields_for :branches do |branch| %>
+                          <%= render 'branch_fields', f: branch %>
+                        <% end %>
+                        <div class="col-md-4 pull-right" style="margin-top:20px;">
+                          <%= link_to_add_association 'Add Branch', f, :branches, class: "btn btn-orange btn-md pull-right" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <%= f.submit 'Update Account'%>
+<% end %>

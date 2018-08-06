@@ -1,0 +1,47 @@
+<%= form_for Contac.new, id: "contactForm" do |f| %>
+<!-- <form action="" id="contactForm" name="contactForm" novalidate="novalidate"> -->
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-6">
+        <label>Your name <span class="symbol required"></span></label> 
+        <%= f.text_field :name, class: "form-control", id: "name" %>
+        <!-- <input class="form-control" data-msg-required="Please enter your name." id="name" maxlength="100" name="name" type=
+        "text" value=""> -->
+      </div>
+      <div class="col-md-6">
+        <label>Your email address <span class="symbol required"></span></label> 
+        <%= f.email_field :email, class: "form-control", id: "email" %>
+        <!-- <input class="form-control" data-msg-email="Please enter a valid email address." data-msg-required=
+        "Please enter your email address." id="email" maxlength="100" name="email" type="email"
+        value=""> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-12">
+        <label>Subject</label> 
+        <%= f.text_field :subject, class: "form-control", id: "subject" %>
+        <!-- <input class="form-control" data-msg-required=
+        "Please enter the subject." id="subject" maxlength="100" name="subject" type="text" value=
+        ""> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-12">
+        <label>Message <span class="symbol required"></span></label> 
+        <%= f.text_area :message, class: "form-control", id: "message", data: {msg_required: "Please enter your message", rows: "10"} %>
+        <!-- <textarea class="form-control" data-msg-required="Please enter your message." id="message"
+        maxlength="5000" name="message" rows="10"></textarea> -->
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:20px;">
+    <div class="col-md-12">
+      <%= f.submit 'Send Message', class: "btn btn-main-color", data: {loading_text: 'Loading...'} %>
+      <!-- <input class="btn btn-main-color" data-loading-text="Loading..." type="submit" value= "Send Message"> -->
+    </div>
+  </div>
+<% end %>

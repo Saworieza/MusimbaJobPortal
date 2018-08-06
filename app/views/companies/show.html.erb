@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @company.industry %>
+</p>
+
+<p>
+  <strong>Nssf:</strong>
+  <%= @company.nssf %>
+</p>
+
+<p>
+  <strong>Nhif:</strong>
+  <%= @company.nhif %>
+</p>
+
+<p>
+  <strong>Kra pin:</strong>
+  <%= @company.kra_pin %>
+</p>
+
+<% if @company.branches.any? %>
+  Branches :
+  <ul>
+    <% @company.branches.each do |branch| %>
+      <li>
+        <%= branch.branch_name %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

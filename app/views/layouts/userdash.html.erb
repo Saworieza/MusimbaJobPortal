@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Candidate Dashboard</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'main-responsive', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'all', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'bootstrap-colorpalette', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'perfect-scrollbar', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'theme_light', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'print', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'fullcalendar', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%#= stylesheet_link_tag 'animate.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'theme_blue', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'settings', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'flexslider', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'colorbox', media: 'all', 'data-turbolinks-track': 'reload' %>
+      
+
+  </head>
+
+  <body>
+  	<!-- start: HEADER -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <!-- start: TOP NAVIGATION CONTAINER -->
+    <div class="container">
+      <div class="navbar-header">
+        <!-- start: RESPONSIVE MENU TOGGLER -->
+         <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type=
+        "button"><span class="clip-list-2"></span></button> <!-- end: RESPONSIVE MENU TOGGLER -->
+         <!-- start: LOGO -->
+         <%= link_to root_path, :class => "navbar-brand" do %>
+              <%#= image_tag 'main_logo.png' %>
+           <img src="assets/main_logo.png">
+         <% end %> 
+        <!-- end: LOGO -->
+      </div>
+      <div class="navbar-tools">
+        <!-- start: TOP NAVIGATION MENU -->
+        <ul class="nav navbar-right">
+          <!-- start: TO-DO DROPDOWN -->
+          <!-- end: TO-DO DROPDOWN-->
+          <!-- start: NOTIFICATION DROPDOWN -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle=
+            "dropdown" href="#"><i class="clip-notification-2"></i> <span class=
+            "badge">11</span></a>
+            <ul class="dropdown-menu notifications">
+              <li><span class="dropdown-menu-title">You have 11 notifications</span></li>
+              <li>
+                <div class="drop-down-wrapper">
+                  <ul>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-primary"><i class=
+                      "fa fa-user"></i></span> <span class="message">New user registration</span>
+                      <span class="time">1 min</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-success"><i class=
+                      "fa fa-comment"></i></span> <span class="message">New comment</span>
+                      <span class="time">7 min</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-success"><i class=
+                      "fa fa-comment"></i></span> <span class="message">New comment</span>
+                      <span class="time">8 min</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-success"><i class=
+                      "fa fa-comment"></i></span> <span class="message">New comment</span>
+                      <span class="time">16 min</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-primary"><i class=
+                      "fa fa-user"></i></span> <span class="message">New user registration</span>
+                      <span class="time">36 min</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-warning"><i class=
+                      "fa fa-shopping-cart"></i></span> <span class="message">2 items sold</span>
+                      <span class="time">1 hour</span></a>
+                    </li>
+                    <li class="warning">
+                      <a href="javascript:void(0)"><span class="label label-danger"><i class=
+                      "fa fa-user"></i></span> <span class="message">User deleted account</span>
+                      <span class="time">2 hour</span></a>
+                    </li>
+                    <li class="warning">
+                      <a href="javascript:void(0)"><span class="label label-danger"><i class=
+                      "fa fa-shopping-cart"></i></span> <span class="message">Transaction was
+                      canceled</span> <span class="time">6 hour</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-success"><i class=
+                      "fa fa-comment"></i></span> <span class="message">New comment</span>
+                      <span class="time">yesterday</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-primary"><i class=
+                      "fa fa-user"></i></span> <span class="message">New user registration</span>
+                      <span class="time">yesterday</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-primary"><i class=
+                      "fa fa-user"></i></span> <span class="message">New user registration</span>
+                      <span class="time">yesterday</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-success"><i class=
+                      "fa fa-comment"></i></span> <span class="message">New comment</span>
+                      <span class="time">yesterday</span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><span class="label label-success"><i class=
+                      "fa fa-comment"></i></span> <span class="message">New comment</span>
+                      <span class="time">yesterday</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="view-all">
+                <a href="javascript:void(0)">See all notifications <i class=
+                "fa fa-arrow-circle-o-right"></i></a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown current-user">
+            <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle=
+            "dropdown" href="#"><img alt="" class="circle-img" src=
+            "assets/images/avatar-1-small.jpg"> <span class="username">Frazier Omondi</span>
+            <i class="clip-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="pages_user_profile.html"><i class="clip-user-2"></i> &nbsp;My Profile</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="utility_lock_screen.html"><i class="clip-locked"></i> &nbsp;Lock
+                Screen</a>
+              </li>
+              <li>
+                <a href="login.html"><i class="clip-exit"></i> &nbsp;Log Out</a>
+              </li>
+            </ul>
+          </li><!-- end: USER DROPDOWN -->
+        </ul><!-- end: TOP NAVIGATION MENU -->
+      </div>
+    </div><!-- end: TOP NAVIGATION CONTAINER -->
+  </div><!-- end: HEADER -->
+  </body>
+</html>

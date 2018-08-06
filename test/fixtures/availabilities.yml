@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exp_years: MyString
+  industry: MyString
+  sal_expectation: MyString
+  work_type: MyString
+  availability: MyString
+  location_id: 1
+  job_category_id: 1
+  user: one
+
+two:
+  exp_years: MyString
+  industry: MyString
+  sal_expectation: MyString
+  work_type: MyString
+  availability: MyString
+  location_id: 1
+  job_category_id: 1
+  user: two
